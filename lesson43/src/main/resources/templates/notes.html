@@ -12,7 +12,9 @@
 		<a href="/notes/create">Create new note</a>
 		<div class="note" th:each="note : ${notes}">
 			<div class="note_label">
-				<span th:text="${note.id}"></span> <span th:text="${note.label}"></span>
+				<a class="update" th:href="@{/notes/update/{id}(id=${note.id})}">update</a>
+				<a class="delete" th:href="@{/notes/delete/{id}(id=${note.id})}">X</a>
+				<p><span th:text="${note.id}"></span> <span th:text="${note.label}"></span>
 			</div>
 			<div th:text="${note.message}"></div>
 		</div>
