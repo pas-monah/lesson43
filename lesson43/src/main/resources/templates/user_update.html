@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/styles/user_form.css">
+</head>
+<body>
+	<h1>Update user</h1>
+	<form action="/user_update" th:name="user" method="post">
+		<p>
+			<span>Id:</span><input type="text" th:name="id" th:value="${user.id}" readonly="readonly">
+		<p>
+			<span>Name: </span><input type="text" th:name="name" required="required" th:value="${user.name}">
+		</p>
+		<p>
+			<span>Age: </span><input type="number" th:name="age" required="required" th:value="${user.age}">
+		</p>
+		<p>
+			<span>Male: </span><input type="radio" th:name="gender" th:value="male" required="required"> 
+			<span>Female: </span><input type="radio" th:name="gender" th:value="female">
+		</p>
+		<input type="submit" value="Update"> 
+		<a href="/users">Cancel</a>
+	</form>
+</body>
+</html>

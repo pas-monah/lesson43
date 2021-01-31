@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Notes list</title>
+<link rel="stylesheet" href="/styles/notes.css">
+</head>
+<body>
+	<div id="notes">
+		<h1>Notes list</h1>
+		<a href="/notes/create">Create new note</a>
+		<div class="note" th:each="note : ${notes}">
+			<div class="note_label">
+				<span th:text="${note.id}"></span> <span th:text="${note.label}"></span>
+			</div>
+			<div th:text="${note.message}"></div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Create user</title>
+<link rel="stylesheet" href="/styles/user_form.css">
+</head>
+<body>
+	<h1>Create user</h1>
+	<form action="/add_user" th:name="user" method="post">
+		<p>
+			<span>Name: </span><input type="text" th:name="name" placeholder="Enter name" required="required">
+		</p>
+		<p>
+			<span>Age: </span><input type="number" th:name="age" placeholder="Enter age" required="required">
+		</p>
+		<p>
+			<span>Male: </span><input type="radio" th:name="gender" th:value="male" required="required"> 
+			<span>Female: </span><input type="radio" th:name="gender" th:value="female">
+		</p>
+		<input type="submit" value="Create"> 
+		<a href="/users">Cancel</a>
+	</form>
+</body>
+</html>
